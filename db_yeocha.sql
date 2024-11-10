@@ -9,7 +9,7 @@ CREATE TABLE `category` (
 
 
 CREATE TABLE `product` (
-  `pr_id` CHAR(10) NOT NULL,
+  `pr_id` VARCHAR(255) NOT NULL,
   `ca_id` CHAR(10) NOT NULL,
   `product_name` VARCHAR(222) NOT NULL,
   `category` VARCHAR(222) NOT NULL,
