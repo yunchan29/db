@@ -35,7 +35,7 @@ Table category {
   ca_id char(10) [primary key]
   category_name varchar(222)
   date_created_at datetime [default: 'CURRENT_TIMESTAMP']
-  date_updated_at datetime [default: 'CURRENT_TIMESTAMP', on_update: 'CURRENT_TIMESTAMP']
+  date_updated_at datetime [default: 'CURRENT_TIMESTAMP']
 }
 
 Table product {
