@@ -229,3 +229,7 @@ VALUES
     ('MA059', 'CUPS', 'DISPOSABLE', 500, '', 'PCS', 'AVAILABLE', '', '', '2024-11-09', '0000-00-00 00:00:00'),
     ('MA060', 'RICE MEAL BOX', 'DISPOSABLE', 100, '', 'PCS', 'AVAILABLE', '', '', '2024-11-09', '0000-00-00 00:00:00'),
     ('MA061', 'BILAO', 'DISPOSABLE', 50, '', 'PCS', 'AVAILABLE', '', '', '2024-11-09', '0000-00-00 00:00:00');
+
+
+-- **SALES**
+-- yeocha_sales_db.sql
