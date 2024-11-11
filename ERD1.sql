@@ -169,3 +169,7 @@ Ref: cart.sm_id > supplier_material.sm_id
 Ref: cart.user_id > users.user_id
 Ref: supplier_history.user_id > users.user_id
 Ref: supplier_material.user_id > users.user_id
+Ref: inventory.pr_id > product.pr_id
+Ref: archive.pr_id > product.pr_id
+
+Ref: "material"."ma_id" < "material"."stock"
