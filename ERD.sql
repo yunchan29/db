@@ -35,7 +35,7 @@ Table category {
   ca_id char(10) [primary key]
   category_name varchar(222)
   date_created_at datetime [default: 'CURRENT_TIMESTAMP']
-  date_updated_at datetime [default: 'CURRENT_TIMESTAMP']
+  date_updated_at datetime [default: 'CURRENT_TIMESTAMP', on_update: 'CURRENT_TIMESTAMP']
 }
 
 Table product {
@@ -53,8 +53,8 @@ Table material {
   ma_id char(10) [primary key]
   material_name varchar(222)
   type varchar(222)
-  stock int(222)
-  enter_stock int(222)
+  stock int
+  enter_stock int
   unit varchar(222)
   remarks varchar(222)
   comment varchar(222)
@@ -65,15 +65,15 @@ Table material {
 
 Table inventory {
   in_id int [primary key, note: 'Auto increment']
-  ma_id int
+  ma_id char(10)
   date_created_at datetime
   date_updated_at datetime
 }
 
 Table menu {
   me_id int [primary key, note: 'Auto increment']
-  pr_id int
-  ma_id int
+  pr_id varchar(255)
+  ma_id char(10)
   date_created_at datetime
   date_updated_at datetime
 }
@@ -93,7 +93,7 @@ Table history {
 Table sale {
   sa_id int [primary key, note: 'Auto increment']
   pr_id varchar(255)
-  sales_code int
+  sales_code varchar(100)
   sell_price decimal(10,2)
   quantity int
   total decimal(10,2)
@@ -104,9 +104,18 @@ Table sale {
 
 Table supplier {
   su_id int [primary key, note: 'Auto increment']
-  ma_id int
+  ma_id char(10)
   date_created_at datetime
   date_updated_at datetime
+}
+
+Table delivery {
+  delivery_id int [primary key, note: 'Auto increment']
+  su_id int
+  delivery_date datetime
+  delivery_status varchar(50)
+  total_items int [default: 0]
+  shop_location varchar(100)
 }
 
 Ref: product.ca_id > category.ca_id
@@ -116,3 +125,4 @@ Ref: menu.pr_id > product.pr_id
 Ref: menu.ma_id > material.ma_id
 Ref: sale.pr_id > product.pr_id
 Ref: supplier.ma_id > material.ma_id
+Ref: delivery.su_id > supplier.su_id
