@@ -43,6 +43,9 @@ CREATE TABLE `material` (
 
 CREATE TABLE `supplier` (
   `su_id` int(222) NOT NULL AUTO_INCREMENT,
+  `su_name` varchar(222) NOT NULL,
+  `su_address` varchar(222) NOT NULL,
+  `contact_number` INT(11) NOT NULL,
   `ma_id` int(11) NOT NULL,
   `date_created_at` datetime NOT NULL,
   `date_updated_at` datetime NOT NULL,
@@ -53,7 +56,9 @@ CREATE TABLE `supplier` (
 
 CREATE TABLE `delivery` (
     `delivery_id` INT AUTO_INCREMENT PRIMARY KEY,
-    `su_id`  int(11) NOT NULL,      
+    `su_id`  int(11) NOT NULL,   
+    `su_name` varchar(222) NOT NULL,  
+    `contact_number` INT(11) NOT NULL,
     `delivery_date` DATETIME NOT NULL,   
     `delivery_status` VARCHAR(50) NOT NULL,        
     `total_items` INT DEFAULT 0,          
@@ -78,6 +83,11 @@ CREATE TABLE `sale` (
 
 
 -- INSERT TABLE:  category, product, materials,sales
+--KULANG SUPPLIERS 
+INSERT INTO `suppliers` ('su_id','ma_id','date_created_at','date_updated_at')
+VALUES ()
+
+;
 
 -- ** 14 CATEGORIES ** --
 INSERT INTO `category` (`category_name`, `date_created_at`, `date_updated_at`) 
